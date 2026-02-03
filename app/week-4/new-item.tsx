@@ -57,8 +57,8 @@ export default function NewItem() {
                     placeholder="Enter item name"
                     className={`w-full border rounded p-3 ${!name && nameTouched ? "border-red-500" : "border-gray-300"
                         }`} />
-                {!name && nameTouched && (
-                    <p className="text-red-500">Name is required.</p>
+                {(nameTouched && name.length < 2) && (
+                    <p className="text-red-500">Item name must be at least 2 characters.</p>
                 )}
             </div>
 
